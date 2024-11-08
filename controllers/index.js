@@ -22,6 +22,18 @@ exports.getUsers = async (req, res) => {
   }
 };
 
+exports.getUserById = async (req, res) => {
+  try {
+    const id = req?.params?.id
+    const data = await getTableData(users, {
+      where: {id}
+    });
+    res.status(200).json({data:data.data[0]});
+  } catch (error) {
+    console.error("Error in main application:", error.message);
+  }
+};
+
 exports.createUser = async (req, res) => {
   try {
     const dataToInsert = {
