@@ -4,7 +4,7 @@ const {
   findAndDeleteTableData,
   findAndUpdateTableData,
 } = require("../db/query");
-const { users, posts } = require("../db/dbConstant");
+const { users } = require("../db/dbConstant");
 var bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
